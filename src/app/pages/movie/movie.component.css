@@ -1,0 +1,32 @@
+.container{
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.226);
+}
+.example-card {
+  margin-top: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+  display: inline-block;
+}
+.example-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+mat-card-content{
+  height: 250px;
+  text-align: justify;
+  overflow-y: auto;
+}
+mat-card-header{
+  height: 80px;
+}
+.example-full-width{
+  width: 45%;
+}
+
+.white-input {
+  color: #FFFFFF;
+  caret-color: #FFFFFF;
+}

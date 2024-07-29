@@ -1,0 +1,37 @@
+<div class="container">
+  <br>
+  <br>
+  <br>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Filtrar por nombre</mat-label>
+    <input matInput type="text" [(ngModel)]="movieFilter.original_title" (ngModelChange)="resetPage()" appearance="outlined" >
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Filtrar por fecha</mat-label>
+    <input matInput type="text" [(ngModel)]="movieFilter.release_date" (ngModelChange)="resetPage()" appearance="outlined" >
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <br>
+  <mat-card *ngFor="let item of ListMovies | filterBy:movieFilter | paginate: { itemsPerPage: 5, currentPage: p }" class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{item.original_title}}</mat-card-title>
+      <br>
+    </mat-card-header>
+    <img mat-card-image [src]="'https://image.tmdb.org/t/p/original/' + item.poster_path" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        <b>Overview:</b>{{item.overview}}.
+        <br>
+        <br>
+        <b>Original language:</b> {{item.original_language}}.
+        <br>
+        <br>
+        <b>Date:</b> {{item.release_date}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <br>
+  <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+  <br>
+</div>

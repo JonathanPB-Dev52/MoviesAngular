@@ -1,0 +1,13 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url('https://img.freepik.com/fotos-premium/fondo-cuadro-carrete-pelicula-copia-maqueta-cuadro-espacio_1199903-26549.jpg?w=1380');
+  background-size: cover;
+  z-index: 1000;
+}
+mat-toolbar span {
+  font-weight: bold;
+  color: #FFFFFF;
+}
